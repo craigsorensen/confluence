@@ -61,8 +61,9 @@ end_date_obj = (datetime.strptime(start_date, '%Y-%m-%d'))
 
 payload = {
     'what':event_title,
-    'startDate':(start_date_obj).strftime('%d-%b-%Y'),
-    #'endDate':(end_date_obj).strftime('%d-%b-%Y'),
+    #depending on your version of confluence, for format may need to be '%d %b %Y or '%d-%b-%Y.
+    'startDate':(start_date_obj).strftime('%d %b %Y'), #works with confluence 8.5.4
+    #'endDate':(end_date_obj).strftime('%d %b %Y'),
     'description':event_description,
     'person':get_confluence_user_id(assigned_user),
     'subCalendarId':CONFLUENCE_SUBCALENDAR_ID

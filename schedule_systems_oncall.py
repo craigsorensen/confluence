@@ -78,18 +78,17 @@ def add_oncall_event_to_calender(payload):
 ## Main ##
 
 # Variables
-oncall_rotation = "user1,user2,user3,user4,user5,user6"
+oncall_rotation = "user1,user2,user3,user4,user5,user6,user7" #Must be valid confluence users!
 oncall_start_date = ""  #must be a monday
 oncall_end_date = "" #must be a sunday
 config_file = os.path.join(os.path.expanduser("~"), ".config", "set_oncall", "config.yaml")
-api_token = None
-confluence_token = None
-
-# Variables
 CONFLUENCE_URL= "YOUR_CONFLUENCE_URL"
-CONFLUENCE_SUBCALENDAR_ID = "YOUR_SUB_CAL_ID"
+CONFLUENCE_SUBCALENDAR_ID = "YOUR_SUB_CALENAR_ID"
 EVENT_DESCRIPTION = 'Configured via on-call scheduling script'
 users = {}
+config_file = os.path.join(os.path.expanduser("~"), ".config", "set_oncall", "config.yaml")
+confluence_token = None
+
 
 # Configure Argparse
 parser = argparse.ArgumentParser(description="Schedule on-call rotation.")

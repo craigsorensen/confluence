@@ -3,7 +3,7 @@
 """
     Written by: Craig Sorensen
 
-    This code is a proof of concept and is writen without warranty. Please test before using in production.
+    This code is a proof of concept and is written without warranty. Please test before using in production.
 
     This script is used to schedule users in an oncall rotation, for one week. They are schedule from Monday to Sunday on
     a Confluence calendar.
@@ -15,7 +15,6 @@ import re
 import requests
 import yaml
 import os
-import getpass
 import json
 import urllib
 import sys
@@ -223,7 +222,7 @@ for i in range(weeks_to_schedule):
     dyn_startDate = (start_date_obj + timedelta(weeks=count))
 
     payload = {
-        'what':'on-call',
+        'what':f"{joined_list[i]} on-call",
         'startDate':(start_date_obj + timedelta(weeks=count)).strftime('%d %b %Y'), # date format works with confluence 8.5.4.
         'endDate':(dyn_startDate + timedelta(days=6)).strftime('%d %b %Y'),         # previous version may need %d-%b-%Y
         'description':EVENT_DESCRIPTION,
